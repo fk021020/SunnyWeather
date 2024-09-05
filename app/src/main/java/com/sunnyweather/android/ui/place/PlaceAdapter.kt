@@ -6,10 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.sunnyweather.ui.place.PlaceFragment
 import com.sunnyweather.android.R
 import com.sunnyweather.android.logic.model.Place
 import com.sunnyweather.android.ui.weather.WeatherActivity
-import kotlinx.android.synthetic.main.activity_weather.*
+
 
 class PlaceAdapter(private val fragment: PlaceFragment, private val placeList: List<Place>) : RecyclerView.Adapter<PlaceAdapter.ViewHolder>() {
 
@@ -26,8 +27,9 @@ class PlaceAdapter(private val fragment: PlaceFragment, private val placeList: L
             val place = placeList[position]
             val activity = fragment.activity
             if (activity is WeatherActivity) {
-
-                activity.drawerLayout.closeDrawers()
+//                val drawerLayout = activity.findViewById(R.id.drawerLayout)
+//                /*activity.*/drawerLayout.closeDrawers()
+                activity.closeDrawerLayout()
                 activity.viewModel.locationLng = place.location.lng
                 activity.viewModel.locationLat = place.location.lat
                 activity.viewModel.placeName = place.name
@@ -45,13 +47,10 @@ class PlaceAdapter(private val fragment: PlaceFragment, private val placeList: L
         }
         return holder
     }
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val place = placeList[position]
         holder.placeName.text = place.name
         holder.placeAddress.text = place.address
     }
-
     override fun getItemCount() = placeList.size
-
 }

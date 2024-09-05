@@ -60,6 +60,7 @@
                     android:layout_marginTop="4dp"
                     android:textSize="16sp"
                     android:textColor="?android:attr/textColorPrimary"/>
+
             </LinearLayout>
 
         </RelativeLayout>
@@ -98,6 +99,7 @@
                     android:layout_marginTop="4dp"
                     android:textSize="16dp"
                     android:textColor="?android:attr/textColorPrimary"/>
+
             </LinearLayout>
 
         </RelativeLayout>
@@ -143,6 +145,7 @@
                         android:layout_marginTop="4dp"
                         android:textSize="16sp"
                         android:textColor="?android:attr/textColorPrimary"/>
+
                 </LinearLayout>
 
         </RelativeLayout>

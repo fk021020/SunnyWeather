@@ -17,7 +17,7 @@ object SunnyWeatherNetwork {
 
     private val placeService = ServiceCreator.create(PlaceService::class.java)
 
-    suspend fun searchPlaces(query: String) = placeService.searchPlaces(query).await()
+    suspend fun searchPlace(query: String) = placeService.searchPlaces(query).await()
 
 
     private suspend fun <T> retrofit2.Call<T>.await(): T {

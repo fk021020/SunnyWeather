@@ -12,7 +12,7 @@ object PlaceDao {
             putString("place", Gson().toJson(place))
         }
     }
-    fun getSavedPlace(): Place {
+    fun getSavePlace(): Place {
         val placeJson = sharedPreferences().getString("place","")
         return Gson().fromJson(placeJson,Place::class.java)
     }
